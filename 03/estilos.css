@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar {
+    width: 800px;
+    border: 10px solid black;
+    display: flex;
+    justify-content:space-around;
+    text-align: center;
+  }
+  main {
+    background-color:lightgray;
+    width: 900px;
+    float: left;
+  }
+  .aside {
+    background-color: yellow;
+    width: 300px;
+    float: right;
+  }
+  .footer {
+    background-color: red;
+  }
+  .clearfix {
+    clear: both;
+  }
