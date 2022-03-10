@@ -25,3 +25,7 @@
   .clearfix {
     clear: both;
   }
+
+  h2{
+    color: blueviolet;
+  }
