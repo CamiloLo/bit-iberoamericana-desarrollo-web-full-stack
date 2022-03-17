@@ -23,10 +23,6 @@ section{
     padding: 16px;
 }
 .navbar{
-    /*
-    display: flex;
-    flex-direction: column;
-    */
     display: none;
 }
 .continer{
@@ -52,4 +48,9 @@ h2{
 }
 .fa-mobile{
     color: brown;
+}
+
+.lista-de-servicios{
+    list-style: none;
+    margin-top: 16px;
 }
