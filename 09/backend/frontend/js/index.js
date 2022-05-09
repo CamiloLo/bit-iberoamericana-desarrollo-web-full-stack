@@ -8,7 +8,7 @@ const $crearBtn = d.createElement('button')
 const $p = d.createElement('p')
 const $ol= d.createElement('ol')
 
-$h1.textContent= 'Lista de tareas'
+$h1.textContent= 'Organiza tu dia'
 $main.appendChild($h1)
 $main.appendChild($input)
 $crearBtn.setAttribute('id', 'crearBtn')
@@ -55,12 +55,15 @@ const vigilarEliminar = (botones) => {
 
 
 //FUNCIONES
+$main.classList.add('input')
+$crearBtn.classList.add('button')
+$h1.classList.add('h1')
 const crearTarea= () => {
     //console.log('crear tarea')
       $input.value
-    //console.log('tarea:', tarea)
-    const tarea={
-        name:$input.value,
+      //console.log('tarea:', tarea)
+      const tarea={
+          name:$input.value,
         completed: false 
     }
     fetch(apiUrl, {
@@ -75,11 +78,11 @@ const crearTarea= () => {
           if (datos.success) {
               leerTareas()
               $input.value= null
-          }
+            }
         })
-      .catch(error=>console.log('error:', error))
-}
-
+        .catch(error=>console.log('error:', error))
+    }
+    
 const leerTareas= () =>{
     $p.textContent=''
     $ol.innerHTML= null
@@ -151,5 +154,6 @@ const elimiarTarea=(id)=>{
     } )
     .then(respuesta=>leerTareas())
     .catch(error => console.log('error:', error)) 
+
 
 }

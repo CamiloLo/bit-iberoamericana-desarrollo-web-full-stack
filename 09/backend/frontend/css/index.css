@@ -1,5 +1,50 @@
 .eliminar:hover{
-    background:white;
-    color:black;
-    border: 2px solid red;
+    background-color: #f44336; 
+    border-radius: 30px;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
+.input{
+    text-align: center;
+}
+
+.h1{
+    text-align: center;
+    font-family: Arial black;
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15); ;
+}
+
+
+.button:hover{
+    background-color: #4CAF50; 
+    border-radius: 30px;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family:'Times New Roman', Times, serif ;
+}
+
+.li{
+    text-align: center;
+}
+
+body{
+    background-color: azure;
 }
