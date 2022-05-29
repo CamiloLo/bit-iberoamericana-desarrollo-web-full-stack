@@ -6,7 +6,7 @@ const $h1= d.createElement('h1')
 const $input= d.createElement('input')
 const $crearBtn = d.createElement('button')
 const $p = d.createElement('p')
-const $ol= d.createElement('ol')
+const $ul= d.createElement('ol')
 
 $h1.textContent= 'Organiza tu dia'
 $main.appendChild($h1)
@@ -55,6 +55,7 @@ const vigilarEliminar = (botones) => {
 
 
 //FUNCIONES
+//$ul.classList.add('ul')
 $main.classList.add('input')
 $crearBtn.classList.add('button')
 $h1.classList.add('h1')
@@ -85,7 +86,7 @@ const crearTarea= () => {
     
 const leerTareas= () =>{
     $p.textContent=''
-    $ol.innerHTML= null
+    $ul.innerHTML= null
     fetch(apiUrl)
 .then((respuesta)=> respuesta.json())
 .then((datos)=> {
@@ -111,10 +112,10 @@ const leerTareas= () =>{
              $li.dataset.completada = elemento.completed
              $li.appendChild($palomitas)
              $li.appendChild($borrarBtn)
-             $ol.appendChild($li)
+             $ul.appendChild($li)
      
          });
-         $main.appendChild($ol)
+         $main.appendChild($ul)
          $palomitas=d.querySelectorAll('input[type=checkbox]')
          //console.log($palomita)
          $botonesEliminar= d.querySelectorAll('.eliminar')
@@ -151,6 +152,7 @@ const elimiarTarea=(id)=>{
     //console.log(id)
     fetch(`${apiUrl}/${id}`,{
         method: 'DELETE',
+        
     } )
     .then(respuesta=>leerTareas())
     .catch(error => console.log('error:', error)) 
