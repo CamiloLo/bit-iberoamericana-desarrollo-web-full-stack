@@ -1,1 +1,36 @@
-<h1>private works!</h1>
+<main class="container">
+    <h1 class="text-center my-5">Inventario</h1>
+
+    <form (ngSubmit)="newTodo()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Producto por ingresar</label>
+          <input 
+          type="text" 
+          class="form-control" 
+          id="name" 
+          name="name"
+          aria-describedby="nameHelp"
+          [(ngModel)]="todo.name"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+      </form>
+      <ul class="list-group mt-5">
+        <li class="list-group-item d-flex justify-content-between aling-items-center" 
+        *ngFor="let todo of todos">
+          <div>{{todo.name}}</div>
+          <div>
+            <label class="px-5"
+            ><input type="checkbox" class="form-check-input" [checked]="todo.comlpeted" (click)="updateTodo(todo._id)" />Completada</label
+          >
+            <label for="tentacles">Cantidad:</label>
+
+            <input type="number"  name="tentacles"
+                   min="0" max="10000" class="me-5">
+            
+            <button type="button" class="btn btn-outline-danger"(click)="deleteTodo(todo._id)">Eliminar</button>
+          </div>
+        </li>
+      </ul>
+
+</main>

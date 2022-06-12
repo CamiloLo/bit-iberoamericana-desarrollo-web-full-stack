@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LoginService } from "../../services/login.service";
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   user= {
     username:'',
@@ -18,7 +19,16 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log('user', this.user)
+    this.loginService.loginuser(this.user).subscribe(
+      (res) => {
+        if (res.success){
+          localStorage.setItem('token', res.success)
+          this.router.navigate(['private'])
+        }
+      },
+      (err)=> console.log ('err:', err)
+    )
+
   }
 
 }
